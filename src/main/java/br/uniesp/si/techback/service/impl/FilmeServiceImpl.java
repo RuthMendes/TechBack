@@ -39,7 +39,10 @@ public class FilmeServiceImpl implements FilmeService {
     @Override
     public Filme atualizar(Integer id, Filme filme) {
         Filme filmeFromDb = buscarPorId(id);
-        BeanUtils.copyProperties(filme, filmeFromDb);
+
+        filmeFromDb.setTitulo(filme.getTitulo());
+        filmeFromDb.setAutor(filme.getAutor());
+        filmeFromDb.setAnoDeLancamento(filme.getAnoDeLancamento());
 
         return filmeFromDb;
     }

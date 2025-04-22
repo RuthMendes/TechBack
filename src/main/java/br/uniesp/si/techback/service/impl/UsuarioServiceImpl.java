@@ -40,7 +40,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public Usuario atualizar(Integer id, Usuario usuario) {
         Usuario usuarioFromDb = buscarPorId(id);
-        BeanUtils.copyProperties(usuario, usuarioFromDb);
+
+        usuarioFromDb.setNome(usuario.getNome());
+        usuarioFromDb.setEmail(usuario.getEmail());
+        usuarioFromDb.setDataDeNascimento(usuario.getDataDeNascimento());
 
         return usuarioFromDb;
     }
