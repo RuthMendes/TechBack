@@ -1,9 +1,11 @@
 package br.uniesp.si.techback.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
+@Data
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
